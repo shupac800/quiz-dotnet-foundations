@@ -11,10 +11,14 @@ namespace LunchQuiz
     {
         public bool HasPatio { get; set; }
 
-
         public Casual()
         {
-            this.MenuItems = new List<MenuItem>();
+            this.MenuItems.Add(new MenuItem()
+            {
+                Name = "Jalapeno Cheese Poppers",
+                Price = 5.99,
+                Description = "Irresistible nuggets of death"
+            });
         }
     }
 

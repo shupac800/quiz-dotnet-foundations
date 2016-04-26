@@ -22,11 +22,17 @@ namespace LunchQuiz
 
         public void addMenuItem(string newMenuItem)
         {
-
+            this.MenuItems.Add(new MenuItem() {
+                Name = newMenuItem
+            });
         }
         public void addMenuItem(string newMenuItem, double Price)
         {
-
+            this.MenuItems.Add(new MenuItem()
+            {
+                Name = newMenuItem,
+                Price = Price 
+            });
         }
         public void AddCustomerToList(Customer customer)
         {
@@ -34,11 +40,25 @@ namespace LunchQuiz
         }
         public bool ItemIsOnMenu(string menuItem)
         {
-            return true;
+            if (this.MenuItems.Contains(new MenuItem { Name = menuItem } ))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool ItemIsOnMenu(MenuItem menuItem)
         {
-            return true;
+            if (this.MenuItems.Contains(menuItem))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Restaurant()
