@@ -66,6 +66,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LunchQuiz\LunchQuiz.csproj">
+      <Project>{2a0706f9-5322-4f1a-86e8-4c41db89519f}</Project>
+      <Name>LunchQuiz</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
