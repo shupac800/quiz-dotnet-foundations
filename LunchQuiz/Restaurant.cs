@@ -11,44 +11,51 @@ namespace LunchQuiz
         public List<MenuItem> MenuItems { get; set; }
         public List<Customer> CurrentCustomers { get; set; }
 
-        public int NumberofSeatsAtBar { get; set; }
         public int Numberof4PersonTables { get; set; }
         public int Numberof2PersonTables { get; set; }
 
-        public int capacity()
+        // constructor
+        public Restaurant()
         {
-            return NumberofSeatsAtBar + Numberof4PersonTables + Numberof2PersonTables;
+            this.MenuItems = new List<MenuItem>();
+            this.CurrentCustomers = new List<Customer>();
+        }
+
+        public virtual int capacity()  // will be overridden in FineDining class
+        {
+            return this.Numberof4PersonTables * 4 + this.Numberof2PersonTables * 2;
         }
 
         public void addMenuItem(string newMenuItem)
         {
-            this.MenuItems.Add(new MenuItem() {
+            this.MenuItems.Add(new MenuItem {
                 Name = newMenuItem
             });
         }
+
         public void addMenuItem(string newMenuItem, double Price)
         {
-            this.MenuItems.Add(new MenuItem()
+            this.MenuItems.Add(new MenuItem
             {
                 Name = newMenuItem,
                 Price = Price 
             });
         }
+
         public void AddCustomerToList(Customer customer)
         {
-
+            this.CurrentCustomers.Add(customer);
         }
+
         public bool ItemIsOnMenu(string menuItem)
         {
-            if (this.MenuItems.Contains(new MenuItem { Name = menuItem } ))
+            foreach (MenuItem mi in this.MenuItems)
             {
-                return true;
+                if (mi.Name == menuItem) return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
+
         public bool ItemIsOnMenu(MenuItem menuItem)
         {
             if (this.MenuItems.Contains(menuItem))
@@ -61,9 +68,5 @@ namespace LunchQuiz
             }
         }
 
-        public Restaurant()
-        {
-            this.MenuItems = new List<MenuItem>();
-        }
     }
 }

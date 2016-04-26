@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace LunchQuiz
 {
-
     public class Casual : Restaurant
     {
         public bool HasPatio { get; set; }
 
+        // constructor
         public Casual()
         {
-            this.MenuItems.Add(new MenuItem()
+            this.MenuItems.Add(new MenuItem
             {
                 Name = "Jalapeno Cheese Poppers",
                 Price = 5.99,
