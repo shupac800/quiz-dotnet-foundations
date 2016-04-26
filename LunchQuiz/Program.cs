@@ -10,6 +10,7 @@ namespace LunchQuiz
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

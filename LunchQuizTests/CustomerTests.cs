@@ -60,7 +60,7 @@ namespace LunchQuizTests
             Order bobsOrder = new Order
             {
                 Drink = "coke",
-                Entree = "lasagna",
+                Entree = "lasagna"
                 //Dessert = "milkshake"
             };
             Assert.IsFalse(bobsOrder.VerifyOrderComplete()); //False!

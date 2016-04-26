@@ -10,7 +10,16 @@ namespace LunchQuiz
     {
         public bool ReadyToPlaceOrder(Order order, Restaurant restaurant)
         {
-            return true;
+            if ( (!String.IsNullOrEmpty(order.Drink) && restaurant.ItemIsOnMenu(order.Drink) ) &&
+                 (!String.IsNullOrEmpty(order.Entree) && restaurant.ItemIsOnMenu(order.Entree) ) &&
+                 (!String.IsNullOrEmpty(order.Dessert) && restaurant.ItemIsOnMenu(order.Dessert) ) )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

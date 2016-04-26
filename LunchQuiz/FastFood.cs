@@ -10,6 +10,7 @@ namespace LunchQuiz
     {
         public bool HasDriveThrough { get; set; }
 
+        // constructor
         public FastFood()
         {
             this.MenuItems = new List<MenuItem>();
